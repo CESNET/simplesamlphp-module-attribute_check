@@ -1,0 +1,9 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+modules
+node_modules
+vendor/
+composer.lock

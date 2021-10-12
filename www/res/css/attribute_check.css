@@ -1,0 +1,26 @@
+#content {
+    max-width: 1080px;
+}
+
+.attributes_block {
+    line-height: 2em;
+}
+
+.attribute_row {
+    border-bottom: 1px solid black;
+}
+
+.attribute_name {
+    font-weight: bold;
+}
+
+.attribute_value {
+    word-break: break-word;
+}
+
+.btn-show-hide {
+    margin: 25px 10%;
+    width: 80%;
+    padding: 10px 25px;
+    font-weight: bold;
+}

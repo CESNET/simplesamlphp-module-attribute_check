@@ -1,0 +1,26 @@
+{
+    "name": "cesnet/simplesamlphp-module-attribute_check",
+    "description": "Module with SP files for attribute_check",
+    "type": "simplesamlphp-module",
+    "keywords": ["attributes", "attribute_check", "simplesamlphp"],
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Pavel Vyskocil",
+            "email": "vyskocilpavel@muni.cz"
+        },
+        {
+            "name": "Dominik Frantisek Bucik",
+            "email": "bucik@ics.muni.cz"
+        }
+    ],
+    "require": {
+        "simplesamlphp/simplesamlphp": "~1.17",
+        "simplesamlphp/composer-module-installer": "~1.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+        ,
+        "symplify/easy-coding-standard": "^9.2"
+    }
+}

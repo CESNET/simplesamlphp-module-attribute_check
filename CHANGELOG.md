@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.1...v1.0.2) (2021-10-14)
+
+
+### Bug Fixes
+
+* fix bad require of _autoload ([e3f5cf2](https://github.com/CESNET/simplesamlphp-module-attribute_check/commit/e3f5cf20bea02b065ecb2002db1344cb508e3ce8))
+
 ## [1.0.1](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.0...v1.0.1) (2021-10-14)
 
 

@@ -19,8 +19,6 @@
         "simplesamlphp/composer-module-installer": "~1.0"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
-        ,
         "symplify/easy-coding-standard": "^9.2"
     }
 }

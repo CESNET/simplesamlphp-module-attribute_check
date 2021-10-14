@@ -6,7 +6,10 @@ use SimpleSAML\Auth\Simple;
 use SimpleSAML\Configuration;
 use SimpleSAML\XHTML\Template;
 
-require_once(__DIR__ . '/../../../vendor/autoload.php');
+$baseDir = dirname(__DIR__, 3);
+
+// Add library autoloader.
+require_once($baseDir . '/lib/_autoload.php');
 
 
 const CONFIG_FILE_NAME = 'config_attribute_check.php';

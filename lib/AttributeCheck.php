@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace SimpleSAML\Module\attribute_check;
 
+use SimpleSAML\Error\Exception;
+
 class AttributeCheck
 {
     public const MANDATORY_ONE = 'MANDATORY_AT_LEAST_ONE';
@@ -22,7 +24,7 @@ class AttributeCheck
         $type = $conf['type'];
 
         if (! in_array($type, [self::MANDATORY_ONE, self::MANDATORY_ALL, self::OPTIONAL], true)) {
-            throw new \SimpleSAML\Error\Exception('AttributeSP: Bad type!');
+            throw new Exception('AttributeSP: Bad type!');
         }
 
         $title = self::translate($t, $translates, 'title');
@@ -30,7 +32,7 @@ class AttributeCheck
 
         $group_attributes = $conf['attribute_list'];
         if (! is_array($group_attributes)) {
-            throw new \SimpleSAML\Error\Exception('Attributes must be an array!');
+            throw new Exception('Attributes must be an array!');
         }
 
         $result = self::getGroupResult($type, $group_attributes, $attributes);
@@ -47,7 +49,7 @@ class AttributeCheck
     private static function translate($t, $translates, $key): string
     {
         if ($translates === null) {
-            throw new \SimpleSAML\Error\Exception('Translation configuration cannot be null!');
+            throw new Exception('Translation configuration cannot be null!');
         }
 
         if (isset($translates[$key])) {

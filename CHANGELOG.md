@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.2...v1.0.3) (2021-10-29)
+
+
+### Bug Fixes
+
+* add missing bootstrap.css.map file ([619ce4e](https://github.com/CESNET/simplesamlphp-module-attribute_check/commit/619ce4e55a49349f5a19fd0c1bca0c31f6796db8))
+* change size for font-size ([1fc3e59](https://github.com/CESNET/simplesamlphp-module-attribute_check/commit/1fc3e590ca53347b8f9aa4a49c05d6e827bf6489))
+
 ## [1.0.2](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.1...v1.0.2) (2021-10-14)
 
 

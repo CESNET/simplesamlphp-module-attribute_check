@@ -1,6 +1,22 @@
 {
+  "header": {
+    "en": "Attribute conformance",
+    "cs": "Kontrola atributů"
+  },
   "show_hide_btn": {
     "en": "Show / Hide all attributes",
     "cs": "Zobrazit / Skrýt všechny atributy"
+  },
+  "sign_in_text": {
+    "en": "Welcome to the service for verifying Identity Provider conformance. This service will help you configure your Identity Provider (or report to its administrator) the status of meeting the requirements to work with the AAI. <br/> Hit the sign-in button below to initiate the login process. By doing so, you will have to select the Identity Provider, which you want to use for login. After authenticating with your credentials, you will be presented with status information, describing if the requirements have been met or not.",
+    "cs": "Vítejte na službě pro ověření kompatibility Vašeho poskytovatele identit. Tato služba Vám pomůže při konfiguraci Identity Providera splnit požadavky AAI. <br/> Pokračujte tlačítkem Přihlásit se na výběr poskytovatele identit. Po přihlášení Vám bude zobrazen stav kompatibility s AAI."
+  },
+  "sign_in_btn": {
+    "en": "Sign in",
+    "cs": "Přihlásit se"
+  },
+  "log_out_btn": {
+    "en": "Log out",
+    "cs": "Odhlásit se"
   }
 }

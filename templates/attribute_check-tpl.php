@@ -10,9 +10,9 @@ use SimpleSAML\Module\attribute_check\AttributeCheck;
  *
  * @var SimpleSAML\XHTML\Template $this
  */
-$attributes = $this->data['attributes'];
-$attributesGroupConfiguration = $this->data['attributes_group_config'];
 
+$attributesGroupConfiguration = $this->data['attributes_group_config'];
+$as = $this->data['as'];
 
 $this->data['header'] = '';
 $this->data['head'] = '<link rel="stylesheet" media="screen" type="text/css" href="' .
@@ -25,43 +25,66 @@ $this->data['head'] .= '<script src="' . Module::getModuleUrl(
 
 $this->includeAtTemplateBase('includes/header.php');
 
-foreach ($attributesGroupConfiguration as $group) {
-    echo AttributeCheck::handleAttributesGroup($this, $group, $attributes);
+echo '<h1>' . $this->t('{attribute_check:attribute_check:header}') . '</h1>';
+
+if (! $as->isAuthenticated()) {
+    echo "<div class='mt-5'>";
+    echo '<div>' . $this->t('{attribute_check:attribute_check:sign_in_text}') . '</div>';
+    echo sprintf(
+        "<a class='btn btn-primary text-light mt-5' href='%s'>%s</a>",
+        $as->getLoginURL(),
+        $this->t('{attribute_check:attribute_check:sign_in_btn}')
+    );
+    echo '</div>';
 }
 
-?>
-    <div>
-        <button class="btn btn-primary btn-show-hide" type="button" data-bs-toggle="collapse" data-bs-target="#all_attributes" aria-expanded="false" aria-controls="all_attributes">
-            <?php
-            echo $this->t('{attribute_check:attribute_check:show_hide_btn}');
-            ?>
-        </button>
-    </div>
-<?php
+if ($as->isAuthenticated()) {
+    $attributes = $as->getAttributes();
 
-echo "<div class='collapse attributes_block' id='all_attributes'>";
-foreach ($attributes as $attributeName => $attributeValue) {
-    echo "<div class='row attribute_row'>";
-    echo "<div class='col-md-4 attribute_name'>";
-    echo '<div>' . $attributeName . '</div>';
-    echo '</div>';
+    foreach ($attributesGroupConfiguration as $group) {
+        echo AttributeCheck::handleAttributesGroup($this, $group, $attributes);
+    } ?>
+        <div>
+            <button aria-controls="all_attributes" aria-expanded="false" class="btn btn-primary btn-show-hide"
+                    data-bs-target="#all_attributes" data-bs-toggle="collapse" type="button">
+                <?php
+                echo $this->t('{attribute_check:attribute_check:show_hide_btn}'); ?>
+            </button>
+        </div>
+    <?php
 
-    echo "<div class='col-md-8 attribute_value'>";
-    if (count($attributeValue) > 1) {
-        echo '<ul>';
-        foreach ($attributeValue as $value) {
-            echo '<li>' . $value . '</li>';
+    echo "<div class='collapse attributes_block' id='all_attributes'>";
+    foreach ($attributes as $attributeName => $attributeValue) {
+        echo "<div class='row attribute_row'>";
+        echo "<div class='col-md-4 attribute_name'>";
+        echo '<div>' . $attributeName . '</div>';
+        echo '</div>';
+
+        echo "<div class='col-md-8 attribute_value'>";
+        if (count($attributeValue) > 1) {
+            echo '<ul>';
+            foreach ($attributeValue as $value) {
+                echo '<li>' . $value . '</li>';
+            }
+            echo '</ul>';
+        } elseif (count($attributeValue) === 1) {
+            echo '<div>' . $attributeValue[0] . '</div>';
+        } else {
+            echo '<div></div>';
         }
-        echo '</ul>';
-    } elseif (count($attributeValue) === 1) {
-        echo '<div>' . $attributeValue[0] . '</div>';
-    } else {
-        echo '<div></div>';
-    }
 
-    echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
     echo '</div>';
 }
-echo '</div>';
+
+if ($as->isAuthenticated()) {
+    echo sprintf(
+        "<a class='btn btn-light text-dark' href='%s'>%s</a>",
+        $as->getLogoutURL(),
+        $this->t('{attribute_check:attribute_check:log_out_btn}')
+    );
+}
 
 $this->includeAtTemplateBase('includes/footer.php');

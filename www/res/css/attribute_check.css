@@ -22,9 +22,14 @@ body, .btn {
     word-break: break-word;
 }
 
-.btn-show-hide {
+.btn {
     margin: 25px 10%;
     width: 80%;
     padding: 10px 25px;
+    font-weight: bold;
+    color: white;
+}
+
+a:link {
     font-weight: bold;
 }

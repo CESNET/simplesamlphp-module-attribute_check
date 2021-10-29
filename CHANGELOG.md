@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.3...v1.0.4) (2021-10-29)
+
+
+### Bug Fixes
+
+* add content of file www/res/bootstrap/css/bootstrap.css.map ([e7f29ed](https://github.com/CESNET/simplesamlphp-module-attribute_check/commit/e7f29ed519b9606116a4d6c02127400d7778884e))
+
 ## [1.0.3](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.2...v1.0.3) (2021-10-29)
 
 

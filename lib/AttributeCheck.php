@@ -69,7 +69,7 @@ class AttributeCheck
                     }
                 } elseif (is_array($item)) {
                     foreach ($item as $listItem) {
-                        if (! array_key_exists($item, $attributes)) {
+                        if (! array_key_exists($listItem, $attributes)) {
                             return self::NOT_OK;
                         }
                     }

@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.4...v1.0.5) (2022-03-16)
+
+
+### Bug Fixes
+
+* fix bad comparation for array item ([9fd4c18](https://github.com/CESNET/simplesamlphp-module-attribute_check/commit/9fd4c1833c971f2ecbbf17944502c82aa0a74f3b))
+
 ## [1.0.4](https://github.com/CESNET/simplesamlphp-module-attribute_check/compare/v1.0.3...v1.0.4) (2021-10-29)
 
 
